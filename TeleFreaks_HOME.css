@@ -199,26 +199,6 @@ header a{
     gap: 2rem;
 }
 
-/* スマホはCONTENTSを1カラムにする */
-@media screen and (max-width: 768px) {
-
-  .box3 {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-
-  .songs,
-  .MV {
-    height: 240px;
-  }
-
-  .schedule,
-  .reports,
-  .comments {
-    height: auto;
-  }
-}
-
 
 
 .card-link {
@@ -453,11 +433,42 @@ header a{
   border-radius: 4px;
 }
 /*スマホでは非表示*/
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     .calendar{
     display: none;
   }
+}*/
+
+/* === スマホ最適化 === */
+@media screen and (max-width: 768px) {
+
+  .box3 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .songs,
+  .MV,
+  .schedule,
+  .reports,
+  .comments {
+    width: 100%;
+    min-height: 520px;
+    height: auto;
+  }
+
+  .songs-bg,
+  .MV-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .card-link {
+    height: auto;
+    min-height: inherit;
+  }
 }
+
 
 
 /*フッター*/
