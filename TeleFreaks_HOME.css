@@ -199,6 +199,28 @@ header a{
     gap: 2rem;
 }
 
+/* スマホはCONTENTSを1カラムにする */
+@media screen and (max-width: 768px) {
+
+  .box3 {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .songs,
+  .MV {
+    height: 240px;
+  }
+
+  .schedule,
+  .reports,
+  .comments {
+    height: auto;
+  }
+}
+
+
+
 .card-link {
     display: block;
     width: 100%;
