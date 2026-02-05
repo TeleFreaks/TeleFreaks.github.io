@@ -1,0 +1,135 @@
+<!DICTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>kinema｜SONGS｜テレフリ｜Tele</title>
+        <link rel="stylesheet" href="../CSS_Songs_individual/TeleFreaks_Songs_kinema.css">
+    </head>
+    <body>
+        <header>
+             <div class="header-top">
+                  <div class="header-left">
+                    <a href="../../TeleFreaks_HOME.html" class="logo-link">
+                      <img src="../../images\テレフリ_ロゴ.jpg" alt="テレフリロゴ" class="logo"
+                    </a>
+
+                    <a href="../../TeleFreaks_HOME.html">
+                      <h1 class="header-title">Tele Freaks<br>~テレフリ~</h1>
+                    </a>
+                  </div>
+
+                <button class="hamburger" id="js-hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const hamburger = document.getElementById("js-hamburger");
+                const nav = document.getElementById("js-nav");
+
+                hamburger.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                hamburger.classList.toggle("is-open");
+                });
+                });
+            </script>
+
+
+            <nav class="nav" id="js-nav">
+                <ul class="global-nav">
+                    <li><a href="../TeleFreaks_SONGS.html">SONGS</a></li>
+                    <li><a href="../../MV/TeleFreaks_MV.html">MV</a></li>
+                    <li><a href="../../SCHEDULE/TeleFreaks_Schedule.html">SCHEDULE</a></li>
+                    <li><a href="../../REPORTS/TeleFreaks_REPORTS.html">REPORTS</a></li>
+                    <li><a href="../../COMMENTS/TeleFreaks_COMMENTS.html">COMMENTS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="song-page">
+          <h1 class="song-title">kinema</h1>
+
+          <p class="lyrics">”もう二度と会わない夜はずっと<br>
+                            もう二度と聴けない声はずっと<br>
+                            もう二度と集わない&nbsp;交わらない声と肌<br>
+                            繰り返す僕らは&nbsp;たまに全部忘れちまうんだ”</p>
+
+            <div class="album-wrapper">
+              <img src="../../images/DiskJaket/TokyoSengen_DVD.png" class="album-img" alt="ジャケ写">
+
+              <div class="comment-bubble">🎧 イントロが最高</div>
+              <div class="comment-bubble">🎸 ギターの音が好き</div>
+              <div class="comment-bubble">🥁 サビの爆発力</div>
+            </div>
+            
+        
+        <div class="lyrics-container" id="lyrics">
+            <div class="lyrics-toggle" id="lyricsToggle">▼ 歌詞を表示</div>
+              <div class="lyrics-content">
+                <p> 何処へ進むかなんて&nbsp;結局誰を許すかだって<br>
+                    僕は気づいてなくて<br>
+                    今も&nbsp;ブレる&nbsp;ブレる&nbsp;ブレる論理<br>
+                    <br>
+                    神様飽きたら帰りなって&nbsp;携帯は置きなよ<br>
+                    最期が一番美しいんだ&nbsp;感想をいつかさ<br>
+                    聴かせて&nbsp;聴かせてくれよビーナス<br>
+                    ここから全て始まった&nbsp;それは数分前のこと<br>
+                    <br>
+                    鳴き声しか知らない鳥&nbsp;羽の色は枯れ葉に紛れ<br>
+                    吐いた唾に目が潰れる&nbsp;暮れる&nbsp;暮れる&nbsp;日々の郷里<br>
+                    <br>
+                    小太りの悪徳商人の&nbsp;愛と情熱の薪、真紅に燃え<br>
+                    吐いては捨てるよな&nbsp;夢&emsp;夢想が現実になるのを<br>
+                    聴かせて&nbsp;聴かせてやるよミスター<br>
+                    ここまでの最悪を全部塗り替える夜にさ<br>
+                    <br>
+                    もう二度と会わない夜はずっと<br>
+                    もう二度と聴けない声はずっと<br>
+                    もう二度と集わない&nbsp;交わらない声と肌<br>
+                    繰り返す僕らは&nbsp;たまに全部忘れちまうんだ<br>
+                    <br>
+                    エンドロールはとっくに済んだ<br>
+                    讃美歌のようなフィクションの先へ</p>
+              </div>
+        </div>
+        
+        <div class="song-note">
+            <h2>Tips</h2>
+            <p>初のワンマンライブ「東京宣言」に対しての思いを歌った一曲。あの時、あの場所に集った人々は全く同じようにあそこに集まることは二度とない。それを悼み、その先へ進むTeleという大きなフィクションの覚悟が伝わってくる。もはや見えないほど遠く先へ歩んだTeleが、名残惜しそうに振り返るようなイメージが湧いてくるような曲でもある。それでもたまには、あの日の、あの時のことを思い出したっていいんだよ。いつかあなたに、あの日の感想を届けるよ。</p>
+        </div>
+            
+        <div class="comment-input-area">
+          <h2 class="comment-title">この曲についてひとこと</h2>
+
+          <textarea
+            id="instantCommentInput"
+            placeholder="[好きなポイントを教えて]　[お名前]
+                        ※注意事項等はCOMMENTSのページで確認してください。"
+            rows="3"></textarea>
+
+          <button type="button" id="sendInstantComment">
+            コメントを送る
+          </button>
+
+          <p class="comment-thanks" id="commentThanks">
+            ありがとう！コメントを表示しました。
+          </p>
+        </div>
+            
+            <script src="../Songs_JS/TeleFreaks_Songs_kinema.js"></script>
+        </section>
+    </body>
+    <footer>
+        <p>©テレフリ</p>
+          <p>
+            <a href="mailto:TeleFreaks.kitr@gmail.com"><img src="../../images/e-mail_icon.png" alt="e-mailのアイコン" class="email_icon">メールで連絡</a>
+          </p>
+          <p>
+            <a href="https://x.com/TeIeFreaks" target="_blank" rel="noopener noreferrer">
+              <img src="../../images/twitter_icon.png" alt="ツイッターアイコン" class="twitter_icon">
+              Twitter
+            </a>
+          </p>
+    </footer>
+</html>

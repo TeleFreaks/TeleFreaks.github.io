@@ -1,0 +1,105 @@
+<!DICTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>テレフリ|MV</title>
+        <link rel="stylesheet" href="./TeleFreaks_MV.css">
+    </head>
+    <body>
+        <header>
+             <div class="header-top">
+                  <div class="header-left">
+                    <a href="../TeleFreaks_HOME.html" class="logo-link">
+                      <img src="../images/テレフリ_ロゴ.jpg" alt="テレフリロゴ" class="logo">
+                    </a>
+
+                    <a href="../TeleFreaks_HOME.html">
+                      <h1 class="header-title">Tele Freaks<br>~テレフリ~</h1>
+                    </a>
+                  </div>
+
+                <button class="hamburger" id="js-hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const hamburger = document.getElementById("js-hamburger");
+                const nav = document.getElementById("js-nav");
+
+                hamburger.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                hamburger.classList.toggle("is-open");
+                });
+                });
+            </script>
+
+
+            <nav class="nav" id="js-nav">
+                <ul class="global-nav">
+                    <li><a href="../SONGS/TeleFreaks_SONGS.html">SONGS</a></li>
+                    <li><a href="./TeleFreaks_MV.html">MV</a></li>
+                    <li><a href="../SCHEDULE/TeleFreaks_Schedule.html">SCHEDULE</a></li>
+                    <li><a href="../REPORTS/TeleFreaks_REPORTS.html">REPORTS</a></li>
+                    <li><a href="../COMMENTS/TeleFreaks_COMMENTS.html">COMMENTS</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+            <div class="mv-list">
+
+              <!-- 1つのMVカード -->
+              <div class="mv-card">
+                  <a href="TeleFreaks_MV_Birthday.html" class="mv-cover"></a>
+
+                  <!-- サムネ -->
+                  <div class="mv-thumb">
+                    <img src="https://img.youtube.com/vi/0TpCIiPL-tA/maxresdefault.jpg" alt="バースデイ MV">
+                  </div>
+
+                  <!-- 右側情報 -->
+                  <div class="mv-info">
+
+                    <h3>バースデイ</h3>
+
+                    <p>監督：室谷惠</p>
+
+                    <!-- リンク集 -->
+                    <div class="mv-links">
+
+                      <a href="https://www.youtube.com/watch?v=0TpCIiPL-tA&list=PLsCewtIouT8_2IvgjmrnSDGXKGHDEPPPj&index=25"
+                         target="_blank">
+                        YouTube
+                      </a>
+
+                      <a href="https://x.com/keifrusciante"
+                         target="_blank">
+                        X
+                      </a>
+
+                      <a href="https://instagram.com/xxxx"
+                         target="_blank">
+                        Instagram
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+        <footer>
+            <p>©テレフリ</p>
+              <p>
+                <a href="mailto:TeleFreaks.kitr@gmail.com"><img src="../images/e-mail_icon.png" alt="e-mailのアイコン" class="email_icon">メールで連絡</a>
+              </p>
+              <p>
+                <a href="https://x.com/TeIeFreaks" target="_blank" rel="noopener noreferrer">
+                  <img src="../images/twitter_icon.png" alt="ツイッターアイコン" class="twitter_icon">
+                  Twitter
+                </a>
+              </p>
+        </footer>
+    </body>
+</html>

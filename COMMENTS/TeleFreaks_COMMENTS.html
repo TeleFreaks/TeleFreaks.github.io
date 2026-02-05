@@ -1,0 +1,129 @@
+<!DICTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>テレフリ|COMMENTS</title>
+        <link rel="stylesheet" href="./TeleFreaks_COMMENTS.css">
+    </head>
+    <body>
+        <header>
+             <div class="header-top">
+                  <div class="header-left">
+                    <a href="../TeleFreaks_HOME.html" class="logo-link">
+                      <img src="../images/テレフリ_ロゴ.jpg" alt="テレフリロゴ" class="logo">
+                    </a>
+
+                    <a href="../TeleFreaks_HOME.html">
+                      <h1 class="header-title">Tele Freaks<br>~テレフリ~</h1>
+                    </a>
+                  </div>
+
+                <button class="hamburger" id="js-hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const hamburger = document.getElementById("js-hamburger");
+                const nav = document.getElementById("js-nav");
+
+                hamburger.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                hamburger.classList.toggle("is-open");
+                });
+                });
+            </script>
+
+
+            <nav class="nav" id="js-nav">
+                <ul class="global-nav">
+                    <li><a href="../SONGS/TeleFreaks_SONGS.html">SONGS</a></li>
+                    <li><a href="../MV/TeleFreaks_MV.html">MV</a></li>
+                    <li><a href="../SCHEDULE/TeleFreaks_Schedule.html">SCHEDULE</a></li>
+                    <li><a href="../REPORTS/TeleFreaks_REPORTS.html">REPORTS</a></li>
+                    <li><a href="./TeleFreaks_COMMENTS.html">COMMENTS</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="comments-container">
+
+          <section class="comments-box">
+            <h2>⚠️ コメント投稿時の注意</h2>
+              <p>SONGS,MVの個別ページには、みなさんにコメントを投稿してもらえる機能を付けております。ご利用にあたっては以下をご理解の上で、参加お待ちしております。<br>
+              ぜひ、楽しい空間を一緒に作りましょう！</p>
+            <ul>
+                <li>誹謗中傷はもちろん禁止です。</li>
+                <li>個人情報は書かないでください。ハンドルネームは大歓迎です。<br>
+                    &emsp;(ハンネが本名っぽい場合は名前が消されて反映される可能性があります。)</li>
+                <li>コメントは他の人のページにも反映される可能性があります。<br>
+                    &emsp;(反映はリアルタイムではありません。少々お時間いただきます。)</li>
+                <li>私の判断で削除する場合があります。</li>
+            </ul>
+          </section>
+
+          <section class="comments-box contact-box">
+
+              <h2> ご連絡・アクセス</h2>
+
+              <p class="contact-desc">
+                誤字・脱字の報告、改善の提案、REPORTSに掲載してほしい記事の提案などは<br>
+                全て以下よりご連絡ください。
+              </p>
+
+              <div class="contact-list">
+
+                <!-- メール -->
+                <a href="mailto:TeleFreaks.kitr@gmail.com"
+                   class="contact-item">
+
+                  <img src="../images/e-mail_icon.png"
+                       alt="メールアイコン">
+
+                  <div class="contact-text">
+                    <span class="contact-title">Mail</span>
+                    <span class="contact-value">TeleFreaks.kitr@gmail.com</span>
+                  </div>
+
+                </a>
+
+                <!-- X -->
+                <a href="https://x.com/TeIeFreaks"
+                   class="contact-item"
+                   target="_blank">
+
+                  <img src="../images/twitter_icon.png"
+                       alt="Xアイコン">
+
+                  <div class="contact-text">
+                    <span class="contact-title">Twitter (DM)</span>
+                    <span class="contact-value">@TeIeFreaks</span>
+                  </div>
+
+                </a>
+
+              </div>
+
+        </section>
+
+
+        </div>
+
+        
+        
+        <footer>
+        <p>©テレフリ</p>
+          <p>
+            <a href="mailto:TeleFreaks.kitr@gmail.com"><img src="../images/e-mail_icon.png" alt="e-mailのアイコン" class="email_icon">メールで連絡</a>
+          </p>
+          <p>
+            <a href="https://x.com/TeIeFreaks" target="_blank" rel="noopener noreferrer">
+              <img src="../images/twitter_icon.png" alt="ツイッターアイコン" class="twitter_icon">
+              Twitter
+            </a>
+          </p>
+    </footer>
+    </body>
+</html>

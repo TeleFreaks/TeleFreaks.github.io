@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{text-decoration: underline;}
+
+body{
+    background: #ffff99;
+    padding-bottom: 120px;
+}
+
+/*ヘッダーパート*/
+header{
+    width: 100%;
+    max-width: 1200px;
+    background: #fffacd;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 16px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header a{
+    text-decoration: none;
+    color: inherit;
+}
+.logo{
+    width: 115px;
+    height: auto;
+    padding: 15px;
+}
+.logo-link{display: block;}
+
+.header-title{
+    margin-right: auto;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 28px;
+    color: #1e90ff;
+    margin: 0;
+}
+
+.hamburger {
+    padding: 8px;
+    width: auto;
+    flex-shrink: 0;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: dodgerblue;
+    margin: 5px 0;
+}
+
+
+/*スマホ展開用*/
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+      display: none;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .global-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/*通常時*/
+.nav{
+    margin-left: auto;
+}
+
+.global-nav{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.global-nav li{
+    margin: 0 14px;
+    font-size: 18px;
+    list-style: none;
+}
+
+/*コンテンツエリア*/
+.song-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 16px;
+    font-family: sans-serif;
+    background: #ffff00;
+}
+
+.song-title {
+  text-align: left;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.lyrics {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.album-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.album-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.comment-bubble {
+  position: absolute;
+  background: #fff8dc;
+  padding: 8px 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 14px;
+  max-width: 220px;
+
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.comment-bubble[data-instant="true"] {
+  background: #fff0b3;
+  border: 1px solid orange;
+}
+
+
+.comment-bubble.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.comment-input-area {
+    position: relative;
+    margin-top: 32px;
+    padding: 16px;
+    background: #fffacd;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10;
+}
+
+.comment-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+#instantCommentInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: none;
+}
+
+#sendInstantComment {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
+
+.comment-thanks {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.comment-thanks.show {
+  opacity: 1;
+}
+
+
+
+
+.song-note {
+  margin-top: 32px;
+  background: #f3f3f3;
+  padding: 16px;
+  border-radius: 8px;
+}
+.lyrics-container {
+  position: relative;
+  max-height: 40px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #f8f8f8;
+}
+
+.lyrics-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lyrics-container.open {
+  max-height: 300px;
+}
+
+.icon {
+  transition: transform 0.2s;
+}
+
+.lyrics-container.open .icon {
+  transform: rotate(90deg); /* ▶ → ▼っぽく */
+}
+
+
+  .lyrics-content {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+  }
+
+  .lyrics-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .lyrics-content::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+  }
+  .lyrics-content::-webkit-scrollbar-track {
+    background-color: #222;
+  }
+
+
+/*フッター*/
+footer {
+    background: #fffacd;
+    display: flex;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.email_icon{
+    width: 50px;
+    height: auto;   
+}
+
+.twitter_icon{
+    width: 50px;
+    height: auto;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

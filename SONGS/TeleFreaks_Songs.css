@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/*ヘッダーパート*/
+header{
+    width: 100%;
+    max-width: 1200px;
+    background: #fffacd;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 16px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header a{
+    text-decoration: none;
+    color: inherit;
+}
+.logo{
+    width: 115px;
+    height: auto;
+    padding: 15px;
+}
+.logo-link{display: block;}
+
+.header-title{
+    margin-right: auto;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 28px;
+    color: #1e90ff;
+    margin: 0;
+}
+
+.hamburger {
+    padding: 8px;
+    width: auto;
+    flex-shrink: 0;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: dodgerblue;
+    margin: 5px 0;
+}
+
+
+/*スマホ展開用*/
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+      display: none;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .global-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/*通常時*/
+.nav{
+    margin-left: auto;
+}
+
+.global-nav{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.global-nav li{
+    margin: 0 14px;
+    font-size: 18px;
+    list-style: none;
+}
+
+/*コンテンツエリア*/
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+}
+
+.music {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.songs-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+/* 2カラム */
+.music-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 1曲分 */
+.music-item {
+    display: flex;
+    gap: 12px;
+    background: #fffacd;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+/* 隠しトラック*/
+/* 最初は完全に隠す */
+.secret-item {
+  opacity: 0;
+  /*pointer-events: none; /* 最初は押せない */
+  transition: opacity 0.5s ease;
+}
+
+/* 出現後 */
+.secret-item.revealed {
+  opacity: 0.4;
+  pointer-events: auto;
+}
+
+/* 出現後ホバー */
+.secret-item.revealed:hover {
+  opacity: 0.8;
+  background: #fffacd;
+}
+
+
+.music-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+/* ホバー時 */
+.music-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background-color: #fafafa;
+}
+/* 押せる感 */
+.music-item:hover h3 {
+  text-decoration: underline;
+}
+/* カーソル */
+.music-item {
+  cursor: pointer;
+}
+
+/* ジャケット */
+.music-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* 曲情報 */
+.music-info h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+
+.music-info p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .music-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/*フッター*/
+footer {
+    display: flex;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.email_icon{
+    width: 50px;
+    height: auto;   
+}
+
+.twitter_icon{
+    width: 50px;
+    height: auto;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

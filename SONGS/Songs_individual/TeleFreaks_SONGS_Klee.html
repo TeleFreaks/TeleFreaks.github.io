@@ -1,0 +1,132 @@
+<!DICTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>クレイ｜SONGS｜テレフリ｜Tele</title>
+        <link rel="stylesheet" href="../CSS_Songs_individual/TeleFreaks_Songs_Klee.css">
+    </head>
+    <body>
+        <header>
+             <div class="header-top">
+                  <div class="header-left">
+                    <a href="../../TeleFreaks_HOME.html" class="logo-link">
+                      <img src="../../images\テレフリ_ロゴ.jpg" alt="テレフリロゴ" class="logo">
+                    </a>
+
+                    <a href="../../TeleFreaks_HOME.html">
+                      <h1 class="header-title">Tele Freaks<br>~テレフリ~</h1>
+                    </a>
+                  </div>
+
+                <button class="hamburger" id="js-hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const hamburger = document.getElementById("js-hamburger");
+                const nav = document.getElementById("js-nav");
+
+                hamburger.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                hamburger.classList.toggle("is-open");
+                });
+                });
+            </script>
+
+
+            <nav class="nav" id="js-nav">
+                <ul class="global-nav">
+                    <li><a href="../TeleFreaks_SONGS.html">SONGS</a></li>
+                    <li><a href="../../MV/TeleFreaks_MV.html">MV</a></li>
+                    <li><a href="../../SCHEDULE/TeleFreaks_Schedule.html">SCHEDULE</a></li>
+                    <li><a href="../../REPORTS/TeleFreaks_REPORTS.html">REPORTS</a></li>
+                    <li><a href="../../COMMENTS/TeleFreaks_COMMENTS.html">COMMENTS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="song-page">
+          <h1 class="song-title">クレイ</h1>
+
+          <p class="lyrics">”ほら朝が平等に&nbsp;眠たい瞼を押し上げる<br>
+                    まだ幼い優しさじゃ&nbsp;愛しい君が一番憎らしい<br>
+                    それじゃあ&nbsp;世界おやすみ”</p>
+
+            <div class="album-wrapper">
+              <img src="../../images/DiskJaket/NewBornGhost_jak.png" class="album-img" alt="ジャケ写">
+
+              <div class="comment-bubble">🎧 イントロが最高</div>
+              <div class="comment-bubble">🎸 ギターの音が好き</div>
+              <div class="comment-bubble">🥁 サビの爆発力</div>
+            </div>
+            
+        
+        <div class="lyrics-container" id="lyrics">
+            <div class="lyrics-toggle" id="lyricsToggle">▼ 歌詞を表示</div>
+              <div class="lyrics-content">
+                <p>クレイ色ビルディングが&nbsp;オレンジに照らされて<br>
+                    一様に愛想がない</p>
+                  
+                <p>僕は昨晩は&nbsp;労働に勤しんで<br>
+                    薄給にすがりつけ</p>
+                  
+                <p>意味を見出しちゃダメなの？&nbsp;息を止めちゃダメだよ<br>
+                  意味を見出しちゃダメなの？&nbsp;息を止めちゃダメだよ<br>
+                  頼むよ</p>
+                  
+                <p>クレイ色のビルディングは&nbsp;東方へ消えてゆく<br>
+                    各駅の速度すら&nbsp;もうすでに追いつけない</p>
+                <p>定期券の期限切れ&nbsp;切符買って損をした<br>
+                    540&nbsp;他愛もないさ&nbsp;そういえばお腹が空いてた</p>
+                <p>意味を見出しちゃダメなの？&nbsp;息を止めちゃダメだよ。<br>
+                  意味を見出しちゃダメなの？&nbsp;息を止めちゃダメだよ</p>
+                <p>ほら朝が平等に&nbsp;眠たい瞼を押し上げる<br>
+                    まだ幼い優しさじゃ&nbsp;愛しい君が一番憎らしい</p>
+                <p>それじゃあ&nbsp;世界おやすみ<br>
+                  それじゃあ&nbsp;世界おやすみ<br>
+                  それじゃあ&nbsp;世界おやすみ<br>
+                  それじゃあ&nbsp;世界おやすみ</p>
+              </div>
+        </div>
+        
+        <div class="song-note">
+            <h2>Tips</h2>
+            <p>アルバム「New Born ghost」に収録されている小さめの曲で、独り言をその場にポツリポツリと置いていくかのように歌われているのが印象的である。ライブでは静かに、しかし確かさを持って歌われる。ちなみにこのページの背景色はchina clay色である。（ただし、この曲「クレイ」の英語表記は「Klee」である。芸術家パウル・クレーと関連？？？）</p>
+        </div>
+            
+        <div class="comment-input-area">
+          <h2 class="comment-title">この曲についてひとこと</h2>
+
+          <textarea
+            id="instantCommentInput"
+            placeholder="[好きなポイントを教えて]　[お名前]
+                        ※注意事項等はCOMMENTSのページで確認してください。"
+            rows="3"></textarea>
+
+          <button type="button" id="sendInstantComment">
+            コメントを送る
+          </button>
+
+          <p class="comment-thanks" id="commentThanks">
+            ありがとう！コメントを表示しました。
+          </p>
+        </div>
+            
+            <script src="../Songs_JS/TeleFreaks_Songs_Klee.js"></script>
+        </section>
+    </body>
+    <footer>
+        <p>©テレフリ</p>
+          <p>
+            <a href="mailto:TeleFreaks.kitr@gmail.com"><img src="../../images/e-mail_icon.png" alt="e-mailのアイコン" class="email_icon">メールで連絡</a>
+          </p>
+          <p>
+            <a href="https://x.com/TeIeFreaks" target="_blank" rel="noopener noreferrer">
+              <img src="../../images/twitter_icon.png" alt="ツイッターアイコン" class="twitter_icon">
+              Twitter
+            </a>
+          </p>
+    </footer>
+</html>

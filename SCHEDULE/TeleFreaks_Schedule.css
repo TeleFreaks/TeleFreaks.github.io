@@ -1,0 +1,230 @@
+/*ヘッダーパート*/
+header{
+    width: 100%;
+    max-width: 1200px;
+    background: #fffacd;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 16px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header a{
+    text-decoration: none;
+    color: inherit;
+}
+.logo{
+    width: 115px;
+    height: auto;
+    padding: 15px;
+}
+.logo-link{display: block;}
+
+.header-title{
+    margin-right: auto;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 28px;
+    color: #1e90ff;
+    margin: 0;
+}
+
+.hamburger {
+    padding: 8px;
+    width: auto;
+    flex-shrink: 0;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: dodgerblue;
+    margin: 5px 0;
+}
+
+
+/*スマホ展開用*/
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+      display: none;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .global-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/*通常時*/
+.nav{
+    margin-left: auto;
+}
+
+.global-nav{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.global-nav li{
+    margin: 0 14px;
+    font-size: 18px;
+    list-style: none;
+}
+
+/*月変更ボタン*/
+.monthTitle{
+    background: #fffacd;
+    border-radius: 16px;
+}
+.month-controls {
+    background: #fffacd;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.month-controls button {
+  background: linear-gradient(135deg, #a8cfff, #7faaff); /* グラデーション */
+  color: #000;
+  border: none;
+  border-radius: 8px;  /* 丸み */
+  padding: 6px 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+  margin: 0 5px;
+}
+.month-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #7ba3f5, #5b80e0); /* 明るくなる */
+}
+.month-controls button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+/*カレンダー生成パート*/
+#monthTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    background-color: #fffacd;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.day {
+  min-height: 80px;
+  padding: 6px;
+  background: #fffbca;
+  border-radius: 6px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+/* ホバーで浮き上がる */
+.day:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.schedule-item {
+  background: #eef;
+  margin-bottom: 4px;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* 土曜日 */
+.day:nth-child(7n) .day-number {
+  color: #1e90ff;
+}
+
+/* 日曜日 */
+.day:nth-child(7n-6) .day-number {
+  color: #ff4d4d;
+}
+
+/* 今日 */
+.day.today {
+  border: 2px solid #ff9900;
+}
+
+/*フッター*/
+footer {
+    display: flex;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.email_icon{
+    width: 50px;
+    height: auto;   
+}
+
+.twitter_icon{
+    width: 50px;
+    height: auto;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
