@@ -54,6 +54,7 @@ header a{
     background: none;
     border: none;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .hamburger span {
@@ -146,7 +147,7 @@ body {
     text-decoration: none;
     color: inherit;
 
-    transition: 
+    transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background-color 0.2s ease;
@@ -215,7 +216,7 @@ body {
   margin: 0;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .music-list {
     grid-template-columns: 1fr;
   }
@@ -263,7 +264,7 @@ footer a {
 
 .email_icon{
     width: 50px;
-    height: auto;   
+    height: auto;
 }
 
 .twitter_icon{

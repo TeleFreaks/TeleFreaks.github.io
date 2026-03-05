@@ -67,7 +67,7 @@ header a{
 
 
 /*スマホ展開用*/
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
   .hamburger {
     display: block;
   }
@@ -135,7 +135,7 @@ header a{
 }
 
 /* スマホ対応 */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .comments-container {
     flex-direction: column;
   }
@@ -225,7 +225,7 @@ footer a {
 
 .email_icon{
     width: 50px;
-    height: auto;   
+    height: auto;
 }
 
 .twitter_icon{

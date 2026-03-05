@@ -3,16 +3,13 @@
 
 a{
     color: inherit;
-    text-decoration: none;
 }
-
-
 
 /*ヘッダーパート*/
 header{
     width: 100%;
     max-width: 1200px;
-    background: #fffacd;
+    background:#fffacd;
     margin: 0 auto;
     position: relative;
     padding: 0 16px;
@@ -57,6 +54,7 @@ header a{
     background: none;
     border: none;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .hamburger span {
@@ -69,7 +67,7 @@ header a{
 
 
 /*スマホ展開用*/
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
   .hamburger {
     display: block;
   }
@@ -118,15 +116,37 @@ header a{
 body {
   font-family: sans-serif;
   background: #f7f7f7;
-    padding: 20px;
+  /* padding: 20px; */
 }
 
-.mv-list{
-    margin-top: 20px;
+.mv-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr); /* 2列 */
+
+  gap: 25px; /* カード間の余白 */
+  margin-top: 24px;
+}
+@media (max-width: 600px) {
+  .mv-list {
+    grid-template-columns: 1fr;
+  }
 }
 
+.mv-thumb,
+.mv-title{
+  display: inline-block;
+}
+.mv-title{
+  color: inherit;
+  text-decoration: none;
+}
+.mv-title:hover{
+  text-decoration: underline;
+}
 
 .mv-card {
+  position: relative;
   display: flex;
   gap: 15px;
 
@@ -135,20 +155,14 @@ body {
   border-radius: 8px;
 
   margin-bottom: 20px;
-    
-    cursor: pointer;
-    transition: 0.2s;
+
+  cursor: pointer;
+  transition: 0.2s;
 }
-.mv-card:hover{
+/*.mv-card:hover{
     background: #ffffe0;
     transform: translateY(-2px);
-}
-
-.mv-cover{
-    position: absolute;
-  inset: 0;
-  z-index: 1;
-}
+}*/
 
 .mv-links a {
   position: relative;
@@ -157,9 +171,43 @@ body {
 
 
 /* サムネ */
+.mv-thumb {
+  position: relative;
+  display: block;
+
+  width: 220px;   /* ← 画像と同じにする */
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden; /* ← はみ出し防止（超重要） */
+  border-radius: 8px;
+}
+
 .mv-thumb img {
-  width: 180px;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mv-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.5);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  opacity: 0;
+  transition: 0.2s;
+}
+.mv-thumb:hover .mv-overlay {
+  opacity: 1;
 }
 
 /* 右側 */
@@ -168,27 +216,72 @@ body {
 }
 
 /* リンク集 */
-.mv-links {
-  margin-top: 10px;
+.mv-director {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.mv-links a {
-  display: inline-block;
-  margin-right: 10px;
+.mv-sns a {
+  margin-left: 5px;
+  font-size: 13px;
 
-  padding: 5px 10px;
-  background: #daa520;
-
-  border-radius: 4px;
   text-decoration: none;
-  color: #fff;
+  color: #444;
 
-  font-size: 14px;
-    z-index: 2;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
-.mv-links a:hover {
-  background: #f0e68c;
+.mv-sns a:hover {
+  background: #eee;
+}
+@media (max-width: 600px) {
+  .mv-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-card {
+    flex-direction: column;
+  }
+
+  .mv-thumb {
+    width: 100%;
+  }
+  .mv-thumb img {
+    width: 100%;
+    height: auto;
+  }
+  .mv-title {
+    font-size: 18px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 
@@ -209,7 +302,7 @@ footer a {
 
 .email_icon{
     width: 50px;
-    height: auto;   
+    height: auto;
 }
 
 .twitter_icon{

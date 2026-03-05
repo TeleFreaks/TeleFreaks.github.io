@@ -6,14 +6,27 @@ a{
     text-decoration: none;
 }
 
+/* 共通幅コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+
 /*ヘッダーパート*/
 header{
-    width: 100%;
-    max-width: 1200px;
     background: #fffacd;
     margin: 0 auto;
-    position: relative;
     padding: 0 16px;
+    position: relative;
 }
 
 .header-top {
@@ -55,6 +68,7 @@ header a{
     background: none;
     border: none;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .hamburger span {
@@ -67,7 +81,7 @@ header a{
 
 
 /*スマホ展開用*/
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
   .hamburger {
     display: block;
   }
@@ -115,8 +129,8 @@ header a{
 
 /* お知らせ欄 */
 .home-announce {
-  max-width: 900px;
-  margin: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
   padding: 16px 20px;
   background: #fffacd;
   border: 1px solid #ddd;
@@ -165,7 +179,9 @@ header a{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 24px;
-    padding-top: 20px;
+    max-width:  1200px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 .box {
     padding: 2rem 2rem;
@@ -177,11 +193,23 @@ header a{
 .box3 {
     grid-column: 1 / -1;
 }
+.box3 .h1-title{
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
 
-@media screen and (max-width: 767px){
-    .main{
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 600px){
+
+  .main{
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  header{
+    padding: 0 12px;
+  }
+
 }
 
 .Tele-icon{
@@ -192,14 +220,17 @@ header a{
 
 
 /*CONTENTS配置パート*/
-.box3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    padding: 4rem;
-    gap: 2rem;
+.box3 .h1-title{
+  margin-bottom: 1.5rem;
 }
-
-
+.box3{
+  padding: 3rem;
+}
+.contents-grids{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
 
 .card-link {
     display: block;
@@ -211,7 +242,7 @@ header a{
 
 
 @media (min-width: 1024px) {
-  .box3 {
+  .contents-grids {
     grid-template-columns: 1fr 400px 400px 1fr;
     grid-template-rows: repeat(3, 400px);
   }
@@ -234,9 +265,9 @@ header a{
     margin: 0;
     padding: 2rem;
     min-height: 350px;
-    
+
     cursor: pointer;
-    transition: 
+    transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
@@ -268,7 +299,7 @@ header a{
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .contents {
     padding: 3rem 1.5rem;
   }
@@ -411,6 +442,7 @@ header a{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
+  overflow: auto;
 }
 
 .day {
@@ -433,18 +465,18 @@ header a{
   border-radius: 4px;
 }
 /*スマホでは非表示*/
-/*@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
     .calendar{
     display: none;
   }
-}*/
+}
 
 /* === スマホ最適化 === */
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
 
-  .box3 {
-    display: grid;
+  .contents-grids{
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .songs,
@@ -452,15 +484,24 @@ header a{
   .schedule,
   .reports,
   .comments {
-    width: 100%;
-    min-height: 520px;
-    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .songs,
+  .MV{
+    background-size: contain;
+    background-position:center;
+    background-repeat:no-repeat;
   }
 
   .songs-bg,
   .MV-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     inset: 0;
+    object-fit: contain;
   }
 
   .card-link {
@@ -487,7 +528,7 @@ footer a {
 
 .email_icon{
     width: 50px;
-    height: auto;   
+    height: auto;
 }
 
 .twitter_icon{
