@@ -8,7 +8,7 @@ a{
 
 /* 共通幅コンテナ */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
@@ -57,7 +57,7 @@ header a{
     font-family: "Arial", "Helvetica", sans-serif;
     font-size: 28px;
     color: #1e90ff;
-    margin: 0;
+    margin-right: 10px;
 }
 
 .hamburger {
@@ -127,10 +127,20 @@ header a{
     list-style: none;
 }
 
+/*h1配置パート*/
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    max-width:  1200px;
+    margin: 5px;
+    padding: 0 16px;
+}
+
 /* お知らせ欄 */
 .home-announce {
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 15px auto;
   padding: 16px 20px;
   background: #fffacd;
   border: 1px solid #ddd;
@@ -172,17 +182,6 @@ header a{
 .home-announce {
   grid-column: 1 / -1;
 }
-
-
-/*h1配置パート*/
-.main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 24px;
-    max-width:  1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
 .box {
     padding: 2rem 2rem;
     border-radius: 8px;
@@ -202,12 +201,19 @@ header a{
 
   .main{
     grid-template-columns: 1fr;
-    max-width: 100%;
+    max-width: 390px;
     padding: 0 12px;
   }
 
   header{
+    max-width: 100%;
     padding: 0 12px;
+    margin-left: 4px;
+  }
+
+  .home-announce{
+    max-width: 390px;
+    width: 100%;
   }
 
 }
