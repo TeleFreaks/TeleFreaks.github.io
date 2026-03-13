@@ -7,12 +7,12 @@ a{
 }
 
 /* 共通幅コンテナ */
-.container {
+/* .container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -23,10 +23,12 @@ body{
 
 /*ヘッダーパート*/
 header{
+    width: 100%;
+    max-width: 1200px;
     background: #fffacd;
     margin: 0 auto;
-    padding: 0 16px;
     position: relative;
+    padding: 0 16px;
 }
 
 .header-top {
@@ -57,7 +59,7 @@ header a{
     font-family: "Arial", "Helvetica", sans-serif;
     font-size: 28px;
     color: #1e90ff;
-    margin-right: 10px;
+    margin: 0;
 }
 
 .hamburger {
@@ -81,7 +83,7 @@ header a{
 
 
 /*スマホ展開用*/
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .hamburger {
     display: block;
   }
@@ -132,6 +134,7 @@ header a{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 24px;
+    width: 100%;
     max-width:  1200px;
     margin: 5px;
     padding: 0 16px;
@@ -201,20 +204,25 @@ header a{
 
   .main{
     grid-template-columns: 1fr;
-    max-width: 390px;
-    padding: 0 12px;
-  }
-
-  header{
-    max-width: 100%;
-    padding: 0 12px;
-    margin-left: 4px;
-  }
-
-  .home-announce{
-    max-width: 390px;
     width: 100%;
+    max-width: 370px;
+    padding: 0 12px;
   }
+  .box{
+    width: 100%;
+    max-width: 370px;
+  }
+
+  /* header{
+    max-width: 100%;
+    padding: 0 4px;
+    margin-left: 0 auto;
+  } */
+
+  /* .home-announce{
+    max-width: 370px;
+    width: 100%;
+  } */
 
 }
 
@@ -491,6 +499,8 @@ header a{
   .reports,
   .comments {
     aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 274px;
   }
 
   .songs,

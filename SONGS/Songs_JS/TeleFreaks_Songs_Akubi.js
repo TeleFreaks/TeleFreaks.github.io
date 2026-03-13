@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================= */
   const bubbles = document.querySelectorAll(".comment-bubble");
   const wrapper = document.querySelector(".album-wrapper");
-    
+
     /* 即時コメント入力UI */
     const input = document.getElementById("instantCommentInput");
     const button = document.getElementById("sendInstantComment");
     const thanks = document.getElementById("commentThanks");
-    
+
     button.addEventListener("click", () => {
         const text = input.value;
 
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
           thanks.classList.remove("show");
         }, 2000);
       });
-    
-    
+
+
 
 
   /* =============================
@@ -89,7 +89,7 @@ window.saveInstantComment = function (text) {
   });
 };
 
-  
+
 
   /* =============================
      24時間以内の即時コメント取得
@@ -126,13 +126,21 @@ window.saveInstantComment = function (text) {
   /* =============================
      バブル描画
   ============================= */
-  function renderBubbles(texts, instantList) {
-    const centerX = wrapper.offsetWidth / 2;
-    const centerY = wrapper.offsetHeight / 2;
+ function renderBubbles(texts, instantList) {
 
-    bubbles.forEach((bubble, index) => {
-      const text = texts[index];
-      if (!text) return;
+  const isMobile = window.innerWidth <= 600;
+
+  bubbles.forEach((bubble, index) => {
+
+    const text = texts[index];
+    if (!text) return;
+
+    bubble.textContent = "🎧 " + text;
+
+    if (!isMobile) {
+
+      const centerX = wrapper.offsetWidth / 2;
+      const centerY = wrapper.offsetHeight / 2;
 
       const angle = startAngle + index * angleGap;
       const radius = baseRadius + index * radiusGap;
@@ -140,18 +148,17 @@ window.saveInstantComment = function (text) {
       const x = centerX + Math.cos(angle) * radius;
       const y = centerY + Math.sin(angle) * radius;
 
-      bubble.textContent = "🎧 " + text;
       bubble.style.left = `${x}px`;
       bubble.style.top = `${y}px`;
-      bubble.style.zIndex = bubbles.length - index;
 
-      // 即時コメント判定
-      bubble.dataset.instant = instantList.includes(text);
+    }
 
-      bubble.classList.remove("show");
-      setTimeout(() => bubble.classList.add("show"), index * 300);
-    });
-  }
+    bubble.dataset.instant = instantList.includes(text);
+
+    bubble.classList.remove("show");
+    setTimeout(() => bubble.classList.add("show"), index * 300);
+  });
+}
 
   /* =============================
      コメント回転

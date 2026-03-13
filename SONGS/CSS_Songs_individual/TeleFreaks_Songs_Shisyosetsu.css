@@ -300,7 +300,7 @@ footer a {
 
 .email_icon{
     width: 50px;
-    height: auto;   
+    height: auto;
 }
 
 .twitter_icon{
@@ -310,4 +310,47 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+@media (max-width: 600px) {
+
+  body{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .album-wrapper{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .album-img{
+    max-width: 240px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    padding: 10px;
+  }
+
+  /* コメントを上下表示 */
+  .comment-bubble{
+    position: static;
+    display: block;
+    margin: 8px auto;
+    transform: none;
+    opacity: 1;
+  }
+  .comment-bubble{
+  position: static;
+  display: block;
+  margin: 8px auto;
+
+  transform: none;
+  transition: none;
+  opacity: 1;
+}
+
+.comment-bubble.show{
+  transform: none;
+}
+
 }
